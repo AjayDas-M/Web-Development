@@ -7,48 +7,17 @@
 <body>
     <center>
         <h1>BILL DETAILS</h1>
-        <form name="bill" method="post">
-            <table>
+        <form name="bill" method="POST">
+            <table cellpadding="5">
                 <tr>
-                    <td> SI NO <input type="text" placeholder="SI Number" name="si"></td>
-                    <td> ITEM NAME <input type="text" placeholder="Product name=" nitem"></td>
-                    <td> QUANTITY <input type="text" placeholder="Quantity" name="qty"></td>
-                    <td> ITEM PRICE <input type="text" placeholder="PRICE" name="pitem"></td>
+                    <td> SI NO <input type="text" placeholder="SI Number" name="si1"></td>
+                    <td> ITEM NAME <input type="text" placeholder="Product" name="product1"></td>
+                    <td> QUANTITY <input type="text" placeholder="Quantity" name="qty1"></td>
+                    <td> ITEM PRICE <input type="text" placeholder="PRICE" name="price1"></td>
                 </tr>
                 <tr>
-                    <td> SI NO <input type="text" placeholder="SI Number" name="si"></td>
-                    <td> ITEM NAME <input type="text" placeholder="Product name=" nitem"></td>
-                    <td> QUANTITY <input type="text" placeholder="Quantity" name="qty"></td>
-                    <td> ITEM PRICE <input type="text" placeholder="PRICE" name="pitem"></td>
-                </tr>
-                <tr>
-                    <td> SI NO <input type="text" placeholder="SI Number" name="si"></td>
-                    <td> ITEM NAME <input type="text" placeholder="Product name=" nitem"></td>
-                    <td> QUANTITY <input type="text" placeholder="Quantity" name="qty"></td>
-                    <td> ITEM PRICE <input type="text" placeholder="PRICE" name="pitem"></td>
-                </tr>
-                <tr align="center">
                     <td><input type="submit" value="Continue" name="btn"></td>
                     <td><input type="reset" value="Clear"></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td>SI NO</td>
-                    <td>ITEM</td>
-                    <td>UNIT PRICE</td>
-                    <td>QUANTITY</td>
-                    <td>TOTAL</td>
-                </tr>
-                <tr>
-                    <td> <?php $sno ?> </td>
-                    <td> <?php $pro ?> </td>
-                    <td> <?php $pri ?> </td>
-                    <td> <?php $qty ?> </td>
-                    <td> <?php $pitem*$qty ?> </td>
-
-
-
                 </tr>
             </table>
 
@@ -57,15 +26,39 @@
 </body>
 
 </html>
-
 <?php
-if(isset($_POST['btn']))
-{
-    $sno=$_POST['si'];
-    $pro=$_POST['nitem'];
-    $qty=$_POST['qty'];
-    $pri=$_POST['pitem'];
+    if(isset($_POST['btn']))
+    {
+        $si1=$_POST['si1'];
+        $product1=$_POST['product1'];
+        $qty1=$_POST['qty1'];
+        $price1=$_POST['price1'];
+        $total1=$price1*$qty1;
 
-}
-
+    }
 ?>
+<html>
+<center>
+    <h1>FINAL BILL</h1>
+    <table border="2">
+        <tr align="center">
+            <td>SI NO <br>
+                <?php echo $si1 ?>
+            </td>
+            <td>ITEM <br>
+                <?php echo $product1 ?>
+            </td>
+            <td>UNIT PRICE <br>
+                <?php echo $price1 ?>
+            </td>
+            <td>QUANTITY <br>
+                <?php echo $qty1 ?>
+            </td>
+            <td>TOTAL <br>
+                <?php echo $total1 ?>
+            </td>
+        </tr>
+    </table>
+</center>
+
+</html>
